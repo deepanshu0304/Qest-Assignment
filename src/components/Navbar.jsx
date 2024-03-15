@@ -122,39 +122,37 @@ export default function ({
         </div>
       </div>
 
-      <div className="orders">
+      <div
+        onClick={() => {
+          const refinedData = [];
+          const titleKeys = Object.keys(allOrders[0]);
+          refinedData.push(titleKeys);
+          allOrders.forEach((e) => {
+            if (e.checked) {
+              refinedData.push(Object.values(e));
+            }
+          });
+          let csvContent = "";
+          refinedData.forEach((e) => {
+            csvContent += e.join(",") + "\n";
+          });
+
+          const blob = new Blob([csvContent], {
+            type: "text/csv;charset=utf-8,",
+          });
+
+          const objUrl = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = objUrl;
+          a.download = "deepu";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }}
+        className="orders"
+      >
         <img className="order-icon" src={download} width="20px" height="20px" />
-        <button
-          onClick={() => {
-            const refinedData = [];
-            const titleKeys = Object.keys(allOrders[0]);
-            refinedData.push(titleKeys);
-            allOrders.forEach((e) => {
-              if (e.checked) {
-                refinedData.push(Object.values(e));
-              }
-            });
-            let csvContent = "";
-            refinedData.forEach((e) => {
-              csvContent += e.join(",") + "\n";
-            });
-
-            const blob = new Blob([csvContent], {
-              type: "text/csv;charset=utf-8,",
-            });
-
-            const objUrl = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = objUrl;
-            a.download = "deepu";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-          }}
-          className="order-btn"
-        >
-          Export Orders
-        </button>
+        <button className="order-btn">Export Orders</button>
       </div>
     </div>
   );
