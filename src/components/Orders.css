@@ -1,0 +1,72 @@
+.content {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 63px;
+  background: #ffffff;
+  border-radius: 0px 0px 20px 20px;
+}
+.all-orders {
+  height: 63px;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  background: #ffffff;
+  gap: 20px;
+}
+.order-text {
+  font-size: 16px;
+
+  font-weight: 500;
+}
+
+.all-orders span {
+  color: #9c9c9c;
+}
+
+.labels {
+  display: flex;
+  height: 63px;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  gap: 80px;
+  border-radius: 10px;
+}
+
+.dark {
+  background-color: #f4f4f4;
+}
+
+.ref {
+  flex-basis: 100px;
+  display: flex;
+  gap: 20px;
+}
+
+.order-head {
+  color: #9c9c9c;
+}
+
+.customer {
+  flex-basis: 100px;
+}
+
+.products {
+  flex-basis: 200px;
+}
+
+.date {
+  flex-basis: 100px;
+}
+
+.distribution {
+  flex-basis: 100px;
+}
+
+.status {
+  flex-basis: 150px;
+}
+
+.price {
+  flex-basis: 100px;
+}
